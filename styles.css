@@ -1,0 +1,111 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #282c34;
+    color: white;
+}
+
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #3a3d40, #181719);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 300px;
+    text-align: center;
+    animation: fadeIn 2s;
+}
+
+#day, #date {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+#time {
+    font-size: 3em;
+    margin-bottom: 10px;
+    transition: color 0.5s ease-in-out;
+    animation: pulse 1s infinite;
+}
+
+.controls, .settings {
+    margin-top: 10px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+select {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .clock-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    #time {
+        font-size: 2em;
+    }
+}
+
+/* Themes */
+body.light {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+body.blue {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+body.brown {
+    background-color: #bb4209;
+    color: white;
+}
+
+body.light .clock-container {
+    background: linear-gradient(135deg, #ffffff, #cccccc);
+}
+
+body.blue .clock-container {
+    background: linear-gradient(135deg, #1e3a8a, #1e3a60);
+}
+
+body.brown .clock-container {
+    background: linear-gradient(135deg, #bb4209, #7f1609);
+}
